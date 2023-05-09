@@ -1,8 +1,7 @@
 <div class="container padding">
     <form *ngIf="!reqSent" #resetPassForm="ngForm" (ngSubmit)="requestResetPass(resetPassForm.value)" class="f-two padding-four">
       <h1 class="text-center"><i class="fa-solid fa-unlock-keyhole"></i> Reset Password</h1>
-      <p *ngIf="!authenticated" class="text-center small">Please enter the username & email associated with your account. <br> We will send you a link to reset your password.</p>
-      <p *ngIf="authenticated" class="text-center small">We will send a link to the email associated with your account. <br> Please use the link to reset your password.</p>
+      <p class="text-center small">We will send a link to the email associated with your account. <br> Please use the link to reset your password.</p>
       <br>        
       <div class="row">
                 <div class="col-lg-3"></div>

@@ -51,8 +51,10 @@ export class AllFuelsReceivedComponent implements OnInit {
   }
   
   allRecords(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getAllFuelsReceived().pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.myList = res;
       }
     })

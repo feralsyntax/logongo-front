@@ -23,6 +23,9 @@ export class ErrorsService {
       this.logout();
       location.reload();
     }
+    if(error.error.detail === 'Authentication credentials were not provided.'){
+      this.messages.clear();
+    }
     if(error.error.email){
       this.messages.add(error.error.email);
     }

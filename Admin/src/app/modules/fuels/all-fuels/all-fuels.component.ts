@@ -44,8 +44,10 @@ export class AllFuelsComponent implements OnInit {
   }
   
   allRecords(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getAllFuels().subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.myList = res;
       }
     })

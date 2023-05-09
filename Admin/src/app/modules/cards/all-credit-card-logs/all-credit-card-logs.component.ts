@@ -52,8 +52,10 @@ export class AllCreditCardLogsComponent implements OnInit, OnDestroy {
     this.allRecords();
   }
   allRecords(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getAllCards().pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.myList = res;
       }
     })

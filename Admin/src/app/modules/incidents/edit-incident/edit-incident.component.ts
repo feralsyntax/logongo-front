@@ -30,8 +30,10 @@ export class EditIncidentComponent implements OnInit, OnDestroy {
     this.itemDetails();
   }
   itemDetails(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getIncidentDetails(this.id).pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.details = res;
       }
     })

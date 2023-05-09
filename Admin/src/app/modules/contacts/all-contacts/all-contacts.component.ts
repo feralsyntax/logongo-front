@@ -50,8 +50,10 @@ export class AllContactsComponent implements OnInit, OnDestroy {
     })
   }
   allContacts(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getAllContacts().pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.contacts = res;
       }
     })

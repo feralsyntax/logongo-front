@@ -49,8 +49,10 @@ export class EditFuelComponent implements OnInit, OnDestroy {
     })
   }
   itemDetails(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getFuelDetails(this.id).pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.details = res;
         this.selected = this.details;
       }

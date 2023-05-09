@@ -15,14 +15,6 @@
                     Email is <strong>required</strong>
                   </mat-error>
                   
-                </mat-form-field> <br> <br>      
-                <mat-form-field appearance="fill" class="rounded full-width">
-                  <mat-label>Employee ID</mat-label>
-                  <input matInput placeholder="Start typing..." name="employee_id" ngModel #employee_id="ngModel" type="number" required>
-                  <mat-hint><span class="alert alert-danger rounded">Employees of <strong>{{company}}.</strong></span></mat-hint>
-                  <mat-error *ngIf="employee_id.hasError('required') || employee_id.pristine">
-                    Employee ID is <strong>required</strong>
-                  </mat-error>
                 </mat-form-field><br><br>
                 <mat-form-field appearance="fill" class="rounded full-width">
                   <mat-label>Password</mat-label>

@@ -39,8 +39,10 @@ export class EditAnnouncementComponent implements OnInit {
     })
   }
   announcementDetails(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getAnnouncementDetails(this.id).pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.dots('Loading...');
         this.details = res;
       }
     })

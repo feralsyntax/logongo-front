@@ -39,8 +39,10 @@ export class EditMpesaLogComponent implements OnInit, OnDestroy {
     })
   }
   itemDetails(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getMpesaDetails(this.id).pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.details = res;
       }
     })

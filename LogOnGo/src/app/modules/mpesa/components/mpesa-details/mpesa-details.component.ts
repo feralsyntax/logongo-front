@@ -56,8 +56,10 @@ export class MpesaDetailsComponent implements OnInit {
     this.route.params.subscribe(params => this.getMpesaLogDetails(params['id']))
   }
   getMpesaLogDetails(id:number){
+    Notiflix.Loading.dots('Loading...');
     this.mpesa.getMpesaLogDetails(id).subscribe({
       next: (data) => {
+        Notiflix.Loading.dots('Loading...');
         this.mpesaDetails = data
         this.fuelId = this.mpesaDetails.fuel 
         this.fuelType = this.mpesaDetails.fuel_type

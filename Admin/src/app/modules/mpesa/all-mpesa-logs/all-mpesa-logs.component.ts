@@ -46,8 +46,10 @@ export class AllMpesaLogsComponent implements OnInit, OnDestroy {
     this.allRecords();
   }
   allRecords(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getAllMpesa().pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.myList = res;
       }
     })

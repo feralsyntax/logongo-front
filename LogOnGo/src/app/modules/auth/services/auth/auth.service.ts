@@ -6,10 +6,10 @@ import { map } from 'rxjs/operators';
 import jwtDecode from 'jwt-decode';
 import { RequestHandlerService } from 'src/app/helpers/requests/request-handler.service';
 
-const authAPI = 'http://127.0.0.1:8000/api/auth/';
-// const authAPI = 'https://logongo-api-production.up.railway.app/api/auth/';
-const apiURL = 'http://127.0.0.1:8000/api/';
-// const apiURL = 'https://logongo-api-production.up.railway.app/api/';
+// const authAPI = 'http://127.0.0.1:8000/api/auth/';
+const authAPI = 'https://logongo-api-production.up.railway.app/api/auth/';
+// const apiURL = 'http://127.0.0.1:8000/api/';
+const apiURL = 'https://logongo-api-production.up.railway.app/api/';
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as Notiflix from 'notiflix';
 import { User } from '../classes/user/user';
 import { AuthService } from '../modules/auth/services/auth/auth.service';
 import { AdminService } from '../services/admin/admin.service';
@@ -31,17 +32,17 @@ export class HomeComponent implements OnInit {
     this.allAdmins();
     this.getFuels();
     this.logSummary();
-    if(this.auth.currentUserValue){
-      this.currentUser = this.auth.currentUserValue;
-      this.authenticated = true;
-      this.isStaff = this.auth.currentUserValue.is_staff;
-      this.isSuper = this.auth.currentUserValue.is_superuser;
-    }else{
-      !this.currentUser;
-      this.authenticated = false;
-      !this.isStaff;
-      !this.isSuper;
-      this.router.navigate(['/auth']);
+    if(!this.auth.currentUserValue){
+      this.auth.logout();
+      this.router.navigate[('/auth')]
+    }else if(!this.auth.currentUserValue.is_staff || !this.auth.currentUserValue.is_superuser){
+      this.auth.logout();
+      Notiflix.Report.failure(
+        'Not Permitted!',
+        "Your log in was successful, but you don't have the permissions to access this page.",
+        'Too Bad',
+      )
+      this.router.navigate[('/auth')];
     }
   }
   allAdmins(){

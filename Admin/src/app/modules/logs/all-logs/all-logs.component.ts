@@ -47,8 +47,10 @@ export class AllLogsComponent implements OnInit, OnDestroy {
     this.allRecords();
   }
   allRecords(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getAllLogs().pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.myList = res;
       }
     })

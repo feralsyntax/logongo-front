@@ -42,8 +42,10 @@ export class EditFuelReceivedComponent implements OnInit {
     })
   }
   itemDetails(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getFuelReceivedDetails(this.id).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.details = res;
         console.warn("rcvd:",res)
       }

@@ -48,8 +48,10 @@ export class EditCreditCardLogComponent implements OnInit, OnDestroy {
     })
   }
   itemDetails(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getCardDetails(this.id).pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.details = res;
       }
     })

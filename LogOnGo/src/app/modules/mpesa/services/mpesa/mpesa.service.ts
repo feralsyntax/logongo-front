@@ -3,8 +3,8 @@ import { Observable } from 'rxjs';
 import { LogMpesa } from 'src/app/classes/log-mpesa/log-mpesa';
 import { RequestHandlerService } from 'src/app/helpers/requests/request-handler.service';
 
-// const apiURL = 'https://logongo-api-production.up.railway.app/api/';
-const apiURL = 'http://127.0.0.1:8000/api/';
+const apiURL = 'https://logongo-api-production.up.railway.app/api/';
+// const apiURL = 'http://127.0.0.1:8000/api/';
 
 @Injectable({
   providedIn: 'root'

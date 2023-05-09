@@ -13,7 +13,7 @@ import { AuthService } from '../../auth/services/auth/auth.service';
 })
 export class AllUsersComponent implements OnInit {
   @Input() reload!: () => void;
-  myModel = 'Log';
+  myModel = 'User';
   @Input() id: any;
   @Input() copy!: (text: number) => void;
   private unsubscribe$ = new Subject<void>();
@@ -45,8 +45,10 @@ export class AllUsersComponent implements OnInit {
     this.allRecords();
   }
   allRecords(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getAllUsers().pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.myList = res;
       }
     })

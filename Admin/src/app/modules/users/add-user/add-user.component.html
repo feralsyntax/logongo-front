@@ -5,8 +5,6 @@
                 <mat-form-field class="w-50" appearance="fill" class="full-width" style="margin-top:5%;">
                   <mat-label>Username</mat-label>
                   <input matInput placeholder="Enter username..." name="username" ngModel #username="ngModel" type="text" required minlength="4" maxlength="15">
-                  <mat-icon matSuffix>account_box</mat-icon>
-                  <mat-hint>Min <strong>4 char</strong> | Max <strong>15 char</strong></mat-hint>
                   <mat-error *ngIf="username.hasError('minlength')">
                     Username should be at least <strong>4 characters</strong>.
                   </mat-error>
@@ -20,8 +18,6 @@
                 <mat-form-field class="w-50" appearance="fill" class="rounded full-width" style="margin-top:5%;">
                   <mat-label>First name</mat-label>
                   <input matInput placeholder="Enter first name..." name="first_name" ngModel #first_name="ngModel" type="text" required minlength="3" maxlength="25">
-                  <mat-icon matSuffix>person</mat-icon>
-                  <mat-hint>Min <strong>3 char</strong> | <strong>Max: 25 char</strong></mat-hint>
                   <mat-error *ngIf="first_name.hasError('minlength')">
                     First name should be at least <strong>3 characters</strong>.
                   </mat-error>
@@ -35,8 +31,6 @@
                 <mat-form-field class="w-50" appearance="fill" class="rounded full-width" style="margin-top:5%;">
                   <mat-label>Last name</mat-label>
                   <input matInput placeholder="Enter last name..." name="last_name" ngModel #last_name="ngModel" type="text" required minlength="3" maxlength="20">
-                  <mat-icon matSuffix>person</mat-icon>
-                  <mat-hint>Min <strong>3 char</strong> | Max <strong>20 char</strong></mat-hint>
                   <mat-error *ngIf="last_name.hasError('minlength')">
                     Last name should be at least <strong>3 characters</strong>.
                   </mat-error>

@@ -15,8 +15,9 @@ export class AppComponent implements OnInit {
 
   constructor(
     private meta:Meta,
-    private messageS:MessageService
+    private messageS:MessageService,
     // private detector:ChangeDetectorRef,
+    private auth:AuthService
     ) { }
 
   ngOnInit(): void {
@@ -26,6 +27,9 @@ export class AppComponent implements OnInit {
     this.meta.updateTag({name: 'site', content: 'LogOnGo'}) 
     // this.detector.detectChanges();
     let err: string;
-  
+
+    if(this.auth.currentUserValue){
+      console.warn(this.auth.currentUserValue)
+    }
   }
 }

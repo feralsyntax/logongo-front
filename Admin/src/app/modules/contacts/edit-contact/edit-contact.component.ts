@@ -32,8 +32,10 @@ export class EditContactComponent implements OnInit, OnDestroy {
     this.contactDetails();
   }
   contactDetails(){
+    Notiflix.Loading.dots('Loading...');
     this.service.getContactDetails(this.id).pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res) => {
+        Notiflix.Loading.remove();
         this.details = res;
       }
     })

@@ -11,13 +11,11 @@ import { Log } from 'src/app/classes/log/log';
 import { User } from 'src/app/classes/user/user';
 import { RequestHandlerService } from 'src/app/helpers/requests/request-handler.service';
 
-// const authAPI = 'http://127.0.0.1:8000/api/auth/';
-const authAPI = 'https://logongo-api-production.up.railway.app/api/auth/';
 // const apiURL = 'http://127.0.0.1:8000/api/'
 const apiURL = 'https://logongo-api-production.up.railway.app/api/'
 
 @Injectable({
-  providedIn: 'any'
+  providedIn: 'root'
 })
 export class AdminService {
   logSummary = apiURL + 'logs/summary/';
