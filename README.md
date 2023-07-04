@@ -22,10 +22,7 @@ Request email report  |  Form validation  | Manage profile
 Print log report  |  Email service  | View/Delete contacts/incident reports 
 Manage profile  |  Lazy loading  | View all users
 
-## Screenshot #1 ##
-<img src="https://user-images.githubusercontent.com/99865051/235606162-3d900c8e-b9fe-4ca6-a30a-98607f60ecc6.png">
-
-## Screenshot #2 ##
+## Screenshot
 <img src="https://user-images.githubusercontent.com/99865051/235606333-0f26d5be-f9fd-4f61-8737-efc2e3d07001.png">
 
 ## Live Page: [LogOnGo](https://log-on-go.web.app/)
