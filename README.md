@@ -10,33 +10,17 @@ A fuel station management app.
 ### Description
 This station management app is complete with CRUD functionalities, and generated with Angular & Django. It enables users to record daily fuel station logs, view, edit/update, and delete the logs. 
 
-Standard users can do the following: 
+Upon authentication: 
 
-Upon authentication  | Technical features
------------------------- | ------------------------
-Add logs  | Search tool with filter
-View daily/all logs  | Loader
-View log details  |  Notifier
-Edit logs  |  Error handling
-Request email report  |  Form validation
-Print log report  |  Email service
-Manage profile  |  Lazy loading
-
-Admin users can do the following:
-
-Upon authentication 
------------------------- 
-Add/Update/Delete logs  
-View daily/all logs  
-View log details  
-Request email report  
-Print log report  
-Manage profile  
-Add/Update/Delete announcements
-View/Delete contacts/messages  
-View/Delete incident reports   
-Add/Update/Delete Fuels & details
-View all users   
+Standard users  | Technical features | Admin users
+------------------------ | ------------------------ | ------------------------
+Add logs  | Search tool with filter  | Add/Update/Delete logs/announcements /fuels
+View daily/all logs  | Loader  | View daily/all logs/log details
+View log details  |  Notifier  | Request email report 
+Edit logs  |  Error handling  | Print log report
+Request email report  |  Form validation  | Manage profile
+Print log report  |  Email service  | View/Delete contacts/incident reports 
+Manage profile  |  Lazy loading  | View all users
 
 ## Screenshot #1 ##
 <img src="https://user-images.githubusercontent.com/99865051/235606162-3d900c8e-b9fe-4ca6-a30a-98607f60ecc6.png">
