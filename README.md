@@ -37,16 +37,16 @@ Manage profile  |  Lazy loading  | View all users
 * [Angular Material](https://material.angular.io/)- UI design & themes.
 * [NGX Pagination](https://www.npmjs.com/package/ngx-pagination/)- app pagination.
 * [Notiflix](https://notiflix.github.io/)- loading & notifications.
-* [NG Password Validator]()- password validation.
-* [NG Recaptcha]()- recaptcha.
-* [NG2 Search Filter]()- search filter.
-* [NGX Editor]()- text editor.
+* [NG Password Validator](https://www.npmjs.com/package/ng-password-validator)- password validation.
+* [NG Recaptcha](https://www.npmjs.com/package/ng-recaptcha)- recaptcha.
+* [NG2 Search Filter](https://www.npmjs.com/package/ng2-search-filter)- search filter.
+* [NGX Editor](https://www.npmjs.com/package/ngx-editor)- text editor.
 ### Back-end development
 * [Click here for Back-end logic](https://github.com/benie254/LogOnGo-API/)
 
 ## Other Resources Used 
 
-* SiteIcon made with [Favicon](https://favicon.io). 
+* SiteIcon made with [Icons8](https://icons8.io). 
 * Other app icons from [FontAwesome](https://fontawesome.com/)
 * Stylized fonts from [Google Fonts](https://fonts.google.com/)
 * Color scheme generated with [Adobe Color Wheel](https://color.adobe.com/)
