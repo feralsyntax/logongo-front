@@ -52,6 +52,20 @@ Manage profile  |  Lazy loading  | View all users
 * Color scheme generated with [Adobe Color Wheel](https://color.adobe.com/)
 * Illustrations from [Paaatterns!](https://products.ls.graphics/paaatterns/)
 
+## Project Setup
+## Local setup--LogOnGo
+**
+**1. Install node dependencies**
+- Navigate to the LogOnGo folder and run:
+   ```npm install```
+
+- If you run into any dependency issues during installation, run:
+   ```npm install --legacy-peer-deps```
+
+**2. Start the development server**
+- The application is now ready and should run on your local machine with the following command:
+   ```ng serve --o```
+
 
 ## Behavior Driven Development (BDD)
 **1. Landing Page**
@@ -153,9 +167,12 @@ Manage profile  |  Lazy loading  | View all users
 
 No known bugs. Please report any issues or bugs! 
 
+## Contributions
+Please create a branch and make a pull request with your contributions. 
+
 ## Support and contact details
 
-You can reach me through [mail](mailto:davinci.monalissa@gmail.com) or [LinkedIn](https://www.linkedin.com/in/benson-langat-fullstack-developer)
+You can reach [Benson](https://github.com/benie254) through [mail](mailto:davinci.monalissa@gmail.com) or [LinkedIn](https://www.linkedin.com/in/benson-langat-fullstack-developer)
 
 ### Further help
 
