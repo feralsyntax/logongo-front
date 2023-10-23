@@ -58,7 +58,7 @@ Manage profile  |  Lazy loading  | View all users
 - Navigate to the LogOnGo folder and run:
    - ```npm install```
 
-- If you run into any dependency issues during installation, run:
+- If you face any dependency issues during installation, run:
    - ```npm install --legacy-peer-deps```
 
 **2. Start the development server**
