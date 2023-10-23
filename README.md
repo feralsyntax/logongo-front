@@ -52,6 +52,28 @@ Manage profile  |  Lazy loading  | View all users
 * Color scheme generated with [Adobe Color Wheel](https://color.adobe.com/)
 * Illustrations from [Paaatterns!](https://products.ls.graphics/paaatterns/)
 
+## Project Structure
+
+```
+.
+├── Admin
+├── LogOnGo
+│   ├── ...
+│   └── src
+│       └── app
+│           ├── classes
+│           ├── directives
+│           ├── helpers
+│           ├── modules
+│           ├── pipes
+│           ├── validators
+│           └── ...
+├── ...
+│
+├── README.md
+└── ...
+```
+
 ## Project Setup
 ## Local setup--LogOnGo
 **1. Install node dependencies**
