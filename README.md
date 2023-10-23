@@ -2,7 +2,7 @@
 A fuel station management app.
 
 # LogOnGo
-#### An application that manages a fuel station, and enables users to create & manipulate data, generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3
+#### An application that manages a fuel station, and enables users to create & manipulate data, generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7
 
 ### Author
 [Benson Langat](https://github.com/benie254)
@@ -54,17 +54,16 @@ Manage profile  |  Lazy loading  | View all users
 
 ## Project Setup
 ## Local setup--LogOnGo
-**
 **1. Install node dependencies**
 - Navigate to the LogOnGo folder and run:
-   ```npm install```
+   - ```npm install```
 
 - If you run into any dependency issues during installation, run:
-   ```npm install --legacy-peer-deps```
+   - ```npm install --legacy-peer-deps```
 
 **2. Start the development server**
 - The application is now ready and should run on your local machine with the following command:
-   ```ng serve --o```
+   - ```ng serve --o```
 
 
 ## Behavior Driven Development (BDD)
@@ -202,4 +201,4 @@ SOFTWARE.*
 ###
 *Copyright (c) 2023* ***[Benson Langat](https://github.com/benie254)***
 
-[Angular CLI](https://github.com/angular/angular-cli) version 14.1.3
+[Angular CLI](https://github.com/angular/angular-cli) version 16.2.7
