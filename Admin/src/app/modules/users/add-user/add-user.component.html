@@ -74,9 +74,9 @@
                 </mat-form-field> 
                 <mat-form-field class="w-50" appearance="fill" class="rounded full-width" style="margin-top:5%;">
                   <mat-label><mat-icon matSuffix>security</mat-icon> Password</mat-label>
-                  <input matInput [type]="hide ? 'password' : 'text'" placeholder="Start typing..." [NgPasswordValidator]="options" name="password" ngModel #password="ngModel" required (valid)="isValid($event)" (mousedown)="onKeyOne($event)" (keydown)="onKeyOne($event)" (keyup)="onKeyOne($event)" (keypress)="onKeyOne($event)" (mousemove)="onKeyOne($event)" (mouseleave)="onKeyOne($event)">
+                  <input matInput [type]="hide ? 'password' : 'text'" placeholder="Start typing..." name="password" ngModel #password="ngModel" required (valid)="isValid($event)" (mousedown)="onKeyOne($event)" (keydown)="onKeyOne($event)" (keyup)="onKeyOne($event)" (keypress)="onKeyOne($event)" (mousemove)="onKeyOne($event)" (mouseleave)="onKeyOne($event)">
                   <h6 id="pass1" class="hide">{{value}}</h6>
-                  <mat-hint>Password should be <strong>valid</strong></mat-hint>
+                  <mat-hint>Create a <strong>strong password</strong></mat-hint>
                   <mat-error *ngIf="password.hasError('required') || password.pristine">
                     Password is <strong>required</strong>
                   </mat-error>

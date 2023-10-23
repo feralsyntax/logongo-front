@@ -12,7 +12,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { NgPasswordValidatorModule } from 'ng-password-validator';
 
 
 @NgModule({
@@ -30,7 +29,6 @@ import { NgPasswordValidatorModule } from 'ng-password-validator';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgPasswordValidatorModule,
     MatCheckboxModule,
   ],
   exports: [
