@@ -92,7 +92,7 @@ Manage profile  |  Lazy loading  | View all users
 
 **3. (Optional) Install Angular CLI**
 - To install Angular CLI globally, run:
-   ```npm install -g @angular/cli```
+   - ```npm install -g @angular/cli```
 
 ## Behavior Driven Development (BDD)
 **1. Landing Page**
