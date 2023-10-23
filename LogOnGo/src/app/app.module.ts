@@ -20,6 +20,7 @@ import { ErrorsModule } from './modules/errors/errors.module';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { NavigationModule } from './modules/navigation/navigation.module';
+import { CustomFilterPipe } from './pipes/filter/custom-filter.pipe';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -40,6 +41,7 @@ const app = initializeApp(firebaseConfig);
   declarations: [
     AppComponent,
     BindQueryParamDirective,
+    CustomFilterPipe,
   ],
   imports: [
     BrowserModule,

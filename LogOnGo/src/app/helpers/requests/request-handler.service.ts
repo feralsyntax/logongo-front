@@ -31,19 +31,7 @@ export class RequestHandlerService {
         'An error occured',
         'Okay',
       )
-    } else if (error.status === 204){
-      Notiflix.Report.failure(
-        error.statusText,
-        'Sorry, we could not find any content in the requested resource.',
-        'Okay',
-      )
-    } else if (error.status === 301){
-      Notiflix.Report.failure(
-        error.statusText,
-        'Sorry, the requested page has been moved permanently.',
-        'Okay',
-      )
-    }  else if (error.status === 400){
+    } else if (error.status === 400){
       Notiflix.Report.failure(
         error.statusText,
         'Please fix the highlighted errors and try again',
@@ -63,32 +51,7 @@ export class RequestHandlerService {
         'Okay',
       )
       console.warn("err",error)
-    } else if (error.status === 404){
-      
-    } else if (error.status === 407){
-      Notiflix.Report.warning(
-        error.statusText,
-        '',
-        'Okay',
-      )
-    } else if (error.status === 408 || 504){
-      Notiflix.Report.warning(
-        error.statusText,
-        "Don't worry, this has nothing to do with you. Please give it another try.",
-        'Okay',
-      )
-    } else if (error.status === 500 || 501 || 503){
-      Notiflix.Report.warning(
-        error.statusText,
-        'Sorry, we ran into a problem while processing your request. Please try again',
-        'Okay',
-      )
     } else {
-      Notiflix.Report.failure(
-        error.statusText,
-        'Sorry, we ran into a problem while processing your request. Please try again',
-        'Okay',
-      )
       console.error(
         `Backend returned code ${error.status}, body was: `, error.error);
         console.warn(error.error)

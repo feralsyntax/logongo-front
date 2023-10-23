@@ -24,12 +24,12 @@ import { CardModule } from '../card/card.module';
 import { MpesaModule } from '../mpesa/mpesa.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchLogComponent } from './components/search-log/search-log.component';
 import { MatButtonModule } from '@angular/material/button';
 import { NavigationModule } from '../navigation/navigation.module';
 import { MatTabsModule } from '@angular/material/tabs';
+import { CustomFilterPipe } from './pipes/filter/custom-filter.pipe';
 
 
 @NgModule({
@@ -48,6 +48,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     DeleteLogComponent,
     AddLogComponent,
     SearchLogComponent,
+    CustomFilterPipe
   ],
   imports: [
     CommonModule,
@@ -61,7 +62,6 @@ import { MatTabsModule } from '@angular/material/tabs';
     FormsModule,
     NgxPaginationModule,
     MatExpansionModule,
-    Ng2SearchPipeModule,
     MatIconModule,
     MatButtonModule,
     NavigationModule,

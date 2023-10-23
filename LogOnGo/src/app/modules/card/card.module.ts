@@ -24,9 +24,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { DeleteCardFormComponent } from './forms/delete-card-form/delete-card-form.component';
 import { CardReportFormComponent } from './forms/card-report-form/card-report-form.component';
 import { FuelModule } from '../fuel/fuel.module';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatButtonModule } from '@angular/material/button';
 import { NavigationModule } from '../navigation/navigation.module';
+import { CustomFilterPipe } from './pipes/filter/custom-filter.pipe';
 
 
 @NgModule({
@@ -44,7 +44,8 @@ import { NavigationModule } from '../navigation/navigation.module';
     CardInstructionsComponent,
     AddCardComponent,
     DeleteCardFormComponent,
-    CardReportFormComponent
+    CardReportFormComponent,
+    CustomFilterPipe
   ],
   imports: [
     CommonModule,
@@ -57,7 +58,6 @@ import { NavigationModule } from '../navigation/navigation.module';
     MatDatepickerModule,
     MatExpansionModule,
     FuelModule,
-    Ng2SearchPipeModule,
     MatButtonModule,
     NavigationModule
   ],

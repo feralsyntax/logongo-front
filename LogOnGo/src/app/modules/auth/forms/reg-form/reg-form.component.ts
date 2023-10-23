@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgPasswordValidatorOptions } from 'ng-password-validator';
 import * as Notiflix from 'notiflix';
 import { first, Subject, takeUntil } from 'rxjs';
 import { User } from 'src/app/classes/user/user';
@@ -32,24 +31,6 @@ export class RegFormComponent implements OnInit {
   ngOnInit(): void {
     this.confirmPass();
   }
-  options: NgPasswordValidatorOptions = {
-    placement: 'right',
-    type: 'popup',
-    'custom-class': 'custom-class',
-    rules: {
-      'password': {
-          'type': "range",
-          'min': 8,
-          'max': 25,
-      },
-      "include-symbol": true,
-      "include-number": true,
-      "include-lowercase-characters": true,
-      "include-uppercase-characters": true,
-    },
-    shadow: true,
-    offset: 15,
-  };
 
   isValid(event: boolean): void {
     console.log(event);

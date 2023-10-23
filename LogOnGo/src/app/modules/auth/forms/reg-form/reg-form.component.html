@@ -96,12 +96,12 @@
       <div class="col col-lg-3">
         <mat-form-field appearance="fill" class="rounded full-width" style="margin-top:5%;">
           <mat-label><mat-icon matSuffix>security</mat-icon> Password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Start typing..." [NgPasswordValidator]="options" name="password" ngModel #password="ngModel" required (valid)="isValid($event)" (mousedown)="onKeyOne($event)" (keydown)="onKeyOne($event)" (keyup)="onKeyOne($event)" (keypress)="onKeyOne($event)" (mousemove)="onKeyOne($event)" (mouseleave)="onKeyOne($event)">
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Start typing..." name="password" ngModel #password="ngModel" required (valid)="isValid($event)" (mousedown)="onKeyOne($event)" (keydown)="onKeyOne($event)" (keyup)="onKeyOne($event)" (keypress)="onKeyOne($event)" (mousemove)="onKeyOne($event)" (mouseleave)="onKeyOne($event)">
           <h6 id="pass1" class="hide">{{value}}</h6>
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
-          <mat-hint>Password should be <strong>valid</strong></mat-hint>
+          <mat-hint>Create a <strong>strong password</strong></mat-hint>
           <mat-error *ngIf="password.hasError('required') || password.pristine">
             Password is <strong>required</strong>
           </mat-error>
@@ -115,7 +115,7 @@
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
-          <mat-hint><span *ngIf="errPass" class="alert alert-danger rounded bold">{{errPass}}</span><span *ngIf="!errPass"><span *ngIf="noMatch" class="alert alert-danger rounded">Your passwords <strong>don't match</strong></span> <span *ngIf="!noMatch" class="alert alert-info rounded"> Passwords <strong>match &nbsp;<i class="fa-solid fa-thumbs-up"></i></strong> </span></span></mat-hint>
+          <mat-hint><span *ngIf="errPass" class="alert alert-danger rounded bold">{{errPass}}</span><span *ngIf="!errPass"> <br> <br><span *ngIf="noMatch" class="alert alert-danger rounded">Your passwords <strong>don't match</strong></span> <span *ngIf="!noMatch" class="alert alert-info rounded"> Passwords <strong>match &nbsp;<i class="fa-solid fa-thumbs-up"></i></strong> </span></span></mat-hint>
           <mat-error *ngIf="password2.hasError('required') || password2.pristine">
             Password is <strong>required</strong>
           </mat-error>

@@ -22,9 +22,9 @@ import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FuelModule } from '../fuel/fuel.module';
 import { SearchMpesaComponent } from './components/search-mpesa/search-mpesa.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatButtonModule } from '@angular/material/button';
 import { NavigationModule } from '../navigation/navigation.module';
+import { CustomFilterPipe } from './pipes/filter/custom-filter.pipe';
 
 
 @NgModule({
@@ -41,7 +41,8 @@ import { NavigationModule } from '../navigation/navigation.module';
     MpesaLogCardComponent,
     AllMpesaLogsComponent,
     AddMpesaComponent,
-    SearchMpesaComponent
+    SearchMpesaComponent,
+    CustomFilterPipe
   ],
   imports: [
     CommonModule,
@@ -53,7 +54,6 @@ import { NavigationModule } from '../navigation/navigation.module';
     FormsModule,
     MatExpansionModule,
     FuelModule,
-    Ng2SearchPipeModule,
     MatButtonModule,
     FuelModule,
     NavigationModule,
