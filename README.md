@@ -1,7 +1,4 @@
 # LogOnGo
-A fuel station management app.
-
-# LogOnGo
 #### An application that manages a fuel station, and enables users to create & manipulate data, generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7
 
 ### Author
