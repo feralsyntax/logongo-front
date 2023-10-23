@@ -80,10 +80,19 @@ Manage profile  |  Lazy loading  | View all users
 - If you face any dependency issues during installation, run:
    - ```npm install --legacy-peer-deps```
 
-**2. Start the development server**
+**2. Start the development server localhost:4200**
 - The application is now ready and should run on your local machine with the following command:
+   - ```npm start```
+
+- Then, open your browser on:
+   - `http://localhost:4200/`
+
+- If you have angular-cli installed globally, you can run the following command:
    - ```ng serve --o```
 
+**3. (Optional) Install Angular CLI**
+- To install Angular CLI globally, run:
+   ```npm install -g @angular/cli```
 
 ## Behavior Driven Development (BDD)
 **1. Landing Page**
