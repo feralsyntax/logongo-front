@@ -1,5 +1,5 @@
 
-<div *ngIf="!authenticated">
+<div *ngIf="!authenticated" class="login">
     <form #loginForm="ngForm" (ngSubmit)="logIn(loginForm.value)" class="f-two padding-four">
         <h1 class="text-center"><i class="fa-solid fa-right-to-bracket"></i> Sign In</h1>
             <div class="row">
