@@ -24,14 +24,7 @@ export class RequestHandlerService {
     }, 4000)
     
 
-    if (error.status === 0) {
-      console.error('An error occurred:', error.error);
-      Notiflix.Report.failure(
-        'Sorry!',
-        'An error occured',
-        'Okay',
-      )
-    } else if (error.status === 400){
+    if (error.status === 400){
       Notiflix.Report.failure(
         error.statusText,
         'Please fix the highlighted errors and try again',

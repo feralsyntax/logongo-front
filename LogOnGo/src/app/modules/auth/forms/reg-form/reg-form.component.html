@@ -1,135 +1,273 @@
-<form #regForm="ngForm" (mousemove)="confirmPass()" (mouseover)="confirmPass()" (mousedown)="confirmPass();" (keydown)="confirmPass();" (keyup)="confirmPass();" (keypress)="confirmPass();" (mouseleave)="confirmPass();" (ngSubmit)="signUp(regForm.value)" class="f-two padding-four">
-    <h1 class="text-center"><i class="fa-solid fa-user-plus"></i> Register</h1>
-    <div class="row">
-      <div class="col col-lg-4">
-        <mat-form-field appearance="fill" class="full-width" style="margin-top:5%;">
-          <mat-label>Username</mat-label>
-          <input matInput placeholder="Enter username..." name="username" ngModel #username="ngModel" type="text" required minlength="4" maxlength="15">
-          <mat-icon matSuffix>account_box</mat-icon>
-          <mat-hint>Min <strong>4 char</strong> | Max <strong>15 char</strong></mat-hint>
-          <mat-error *ngIf="username.hasError('minlength')">
-            Username should be at least <strong>4 characters</strong>.
-          </mat-error>
-          <mat-error *ngIf="username.hasError('maxlength')">
-            Username cannot be more than <strong>15 characters</strong>.
-          </mat-error>
-          <mat-error *ngIf="username.hasError('required') || username.pristine">
-            Username is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>  
-      </div>
-      <div class="col col-lg-4">
-        <mat-form-field appearance="fill" class="rounded full-width" style="margin-top:5%;">
-          <mat-label>First name</mat-label>
-          <input matInput placeholder="Enter first name..." name="first_name" ngModel #first_name="ngModel" type="text" required minlength="3" maxlength="25">
-          <mat-icon matSuffix>person</mat-icon>
-          <mat-hint>Min <strong>3 char</strong> | <strong>Max: 25 char</strong></mat-hint>
-          <mat-error *ngIf="first_name.hasError('minlength')">
-            First name should be at least <strong>3 characters</strong>.
-          </mat-error>
-          <mat-error *ngIf="first_name.hasError('maxlength')">
-            First name cannot be more than <strong>25 characters</strong>.
-          </mat-error>
-          <mat-error *ngIf="first_name.hasError('required') || first_name.pristine">
-            First name is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>  
-      </div>
-      <div class="col col-lg-4">
-        <mat-form-field appearance="fill" class="rounded full-width" style="margin-top:5%;">
-          <mat-label>Last name</mat-label>
-          <input matInput placeholder="Enter last name..." name="last_name" ngModel #last_name="ngModel" type="text" required minlength="3" maxlength="20">
-          <mat-icon matSuffix>person</mat-icon>
-          <mat-hint>Min <strong>3 char</strong> | Max <strong>20 char</strong></mat-hint>
-          <mat-error *ngIf="last_name.hasError('minlength')">
-            Last name should be at least <strong>3 characters</strong>.
-          </mat-error>
-          <mat-error *ngIf="last_name.hasError('maxlength')">
-            Last name cannot be more than <strong>25 characters</strong>.
-          </mat-error>
-          <mat-error *ngIf="last_name.hasError('required') || last_name.pristine">
-            Last name is <strong>required</strong>
-          </mat-error>
-        </mat-form-field> 
-      </div>
-    </div>
-  
-  
-    <div class="row">
-      <div class="col-lg-3"></div>
-      <div class="col col-lg-3">
-        <mat-form-field appearance="fill" class="rounded full-width" style="margin-top:5%;">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Enter email..." name="email" ngModel #email="ngModel" type="email" [errorStateMatcher]="matcher" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
-          <mat-icon matSuffix>email</mat-icon>
-          <mat-hint>e.g <strong>{{emailExample}}</strong> </mat-hint>
-          <mat-error *ngIf="email.hasError('pattern')">
-            Please enter a <strong>valid email address</strong> 
-          </mat-error>
-          <mat-error *ngIf="email.hasError('required') || email.pristine">
-            Email is <strong>required</strong>
-          </mat-error>
-        </mat-form-field> 
-      </div>
-      <div class="col col-lg-3">
-        <mat-form-field appearance="fill" class="rounded full-width" style="margin-top:5%;">
-          <mat-label><span><mat-icon>local_gas_station</mat-icon></span> Select Petrol Station </mat-label>
-          
-          <mat-select name="petrol_station" ngModel #petrol_station="ngModel" required>
-            <mat-option value="Station-Kisii" name="petrol_station" type="text">Station Kisii</mat-option>
-            <mat-option value="Station-Nairobi" name="petrol_station" type="text">Station Nairobi</mat-option>
-            <mat-option value="Station-Migori" name="petrol_station" type="text">Station Migori</mat-option>
-          </mat-select>
-          <mat-hint>Select <strong>one</strong></mat-hint>
-          <mat-error *ngIf="petrol_station.hasError('required') || petrol_station.pristine">
-            Petrol station is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="col col-lg-3">
-        
-      </div>
-    </div>
-  
-    <div class="row">
-      <div class="col-lg-3"></div>
-      <div class="col col-lg-3">
-        <mat-form-field appearance="fill" class="rounded full-width" style="margin-top:5%;">
-          <mat-label><mat-icon matSuffix>security</mat-icon> Password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Start typing..." name="password" ngModel #password="ngModel" required (valid)="isValid($event)" (mousedown)="onKeyOne($event)" (keydown)="onKeyOne($event)" (keyup)="onKeyOne($event)" (keypress)="onKeyOne($event)" (mousemove)="onKeyOne($event)" (mouseleave)="onKeyOne($event)">
-          <h6 id="pass1" class="hide">{{value}}</h6>
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-          <mat-hint>Create a <strong>strong password</strong></mat-hint>
-          <mat-error *ngIf="password.hasError('required') || password.pristine">
-            Password is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="col col-lg-3 margin-bottom">
-        <mat-form-field *ngIf="!noPass2" appearance="fill" class="rounded full-width" style="margin-top:5%;">
-          <mat-label><mat-icon matSuffix>security</mat-icon> Confirm password</mat-label>
-          <input matInput id="password2" [type]="hide ? 'password' : 'text'" placeholder="Start typing..." (mousemove)="onKey($event);" (mouseover)="onKey($event);"  (mousedown)="onKey($event);" (keydown)="onKey($event);" (keyup)="onKey($event);" (keypress)="onKey($event);" (mouseleave)="onKey($event);" name="password2" ngModel #password2="ngModel" required>
-          <h6 id="pass2" class="hide">{{values}}</h6>
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-          <mat-hint><span *ngIf="errPass" class="alert alert-danger rounded bold">{{errPass}}</span><span *ngIf="!errPass"> <br> <br><span *ngIf="noMatch" class="alert alert-danger rounded">Your passwords <strong>don't match</strong></span> <span *ngIf="!noMatch" class="alert alert-info rounded"> Passwords <strong>match &nbsp;<i class="fa-solid fa-thumbs-up"></i></strong> </span></span></mat-hint>
-          <mat-error *ngIf="password2.hasError('required') || password2.pristine">
-            Password is <strong>required</strong>
-          </mat-error>
-          <div >
-            
-          </div>
-        </mat-form-field> 
-      </div>
-      <div class="col-lg-3"></div>
-    </div><br><br>
-      <div class="text-center form-group padding-bottom">
-        <button class="margin-top w-50" mat-raised-button color="accent" type="submit" [disabled]="regForm.invalid"><span><i class="fa-solid fa-user-shield"></i></span> Sign up</button>
-        <br><br>
-        <a type="button" routerLink="/auth"><p class="small">or <strong>Login here</strong></p></a>
-      
-    </div>
-  </form>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <form
+      [formGroup]="regForm"
+      (ngSubmit)="signUp()"
+      class="f-two padding-four"
+    >
+      <h1 class="text-center">
+        <i class="fa-solid fa-user-plus"></i> Register
+      </h1>
+      <mat-form-field appearance="fill" style="margin-top: 5%" class="w-100">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          placeholder="Enter username..."
+          type="text"
+          required
+          minlength="4"
+          maxlength="15"
+          [formControlName]="'username'"
+        />
+        <mat-icon matSuffix>account_box</mat-icon>
+        <mat-hint
+          >Min <strong>4 char</strong> | Max <strong>15 char</strong></mat-hint
+        >
+        <mat-error *ngIf="regForm.controls.username.hasError('minLength')">
+          Username should be at least <strong>4 characters</strong>.
+        </mat-error>
+        <mat-error *ngIf="regForm.controls.username.hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="fill"
+        class="rounded w-100"
+        style="margin-top: 5%"
+      >
+        <mat-label>First name</mat-label>
+        <input
+          matInput
+          placeholder="Enter first name..."
+          name="first_name"
+          type="text"
+          required
+          minlength="3"
+          maxlength="25"
+          [formControlName]="'first_name'"
+        />
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-hint
+          >Min <strong>3 char</strong> | <strong>Max: 25 char</strong></mat-hint
+        >
+        <mat-error *ngIf="regForm.controls.first_name.hasError('minLength')">
+          First name should be at least <strong>3 characters</strong>.
+        </mat-error>
+        <mat-error
+          *ngIf="
+            regForm.controls.first_name.hasError('required') ||
+            regForm.controls.first_name.pristine
+          "
+        >
+          First name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="fill"
+        class="rounded w-100"
+        style="margin-top: 5%"
+      >
+        <mat-label>Last name</mat-label>
+        <input
+          matInput
+          placeholder="Enter last name..."
+          name="last_name"
+          type="text"
+          required
+          minlength="3"
+          maxlength="20"
+          [formControlName]="'last_name'"
+        />
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-hint
+          >Min <strong>3 char</strong> | Max <strong>20 char</strong></mat-hint
+        >
+        <mat-error *ngIf="regForm.controls.last_name.hasError('minLength')">
+          Last name should be at least <strong>3 characters</strong>.
+        </mat-error>
+        <mat-error
+          *ngIf="
+            regForm.controls.last_name.hasError('required') ||
+            regForm.controls.last_name.pristine
+          "
+        >
+          Last name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field
+        appearance="fill"
+        class="rounded w-100"
+        style="margin-top: 5%"
+      >
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Enter email..."
+          name="email"
+          type="email"
+          required
+          [formControlName]="'email'"
+        />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-hint
+          >e.g <strong>{{ emailExample }}</strong>
+        </mat-hint>
+        <mat-error *ngIf="regForm.controls.email.hasError('email')">
+          Please enter a <strong>valid email address</strong>
+        </mat-error>
+        <mat-error
+          *ngIf="
+            regForm.controls.email.hasError('required') ||
+            regForm.controls.email.pristine
+          "
+        >
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field
+        appearance="fill"
+        class="rounded w-100"
+        style="margin-top: 5%"
+      >
+        <mat-label
+          ><span><mat-icon>local_gas_station</mat-icon></span> Select Petrol
+          Station
+        </mat-label>
+
+        <mat-select
+          name="petrol_station"
+          required
+          [formControlName]="'petrol_station'"
+        >
+          <mat-option value="" disabled selected
+            >--Petrol Stations--</mat-option
+          >
+          <mat-option value="Station-Kisii" name="petrol_station" type="text"
+            >Station Kisii</mat-option
+          >
+          <mat-option value="Station-Nairobi" name="petrol_station" type="text"
+            >Station Nairobi</mat-option
+          >
+          <mat-option value="Station-Migori" name="petrol_station" type="text"
+            >Station Migori</mat-option
+          >
+        </mat-select>
+        <mat-hint>Select <strong>one</strong></mat-hint>
+        <mat-error
+          *ngIf="
+            regForm.controls.petrol_station.hasError('required') ||
+            regForm.controls.petrol_station.pristine
+          "
+        >
+          Petrol station is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field
+        appearance="fill"
+        class="rounded w-100"
+        style="margin-top: 5%"
+      >
+        <mat-label><mat-icon matSuffix>security</mat-icon> Password</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          placeholder="Start typing..."
+          name="password"
+          required
+          [formControlName]="'password'"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint>Create a <strong>strong password</strong></mat-hint>
+        <mat-error
+          *ngIf="
+            regForm.controls.password.hasError('required') ||
+            regForm.controls.password.pristine
+          "
+        >
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field
+        appearance="fill"
+        class="rounded w-100"
+        style="margin-top: 5%"
+      >
+        <mat-label
+          ><mat-icon matSuffix>security</mat-icon> Confirm password</mat-label
+        >
+        <input
+          matInput
+          id="password2"
+          [type]="hide2 ? 'password' : 'text'"
+          placeholder="Start typing..."
+          name="password2"
+          required
+          [formControlName]="'password2'"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide2 = !hide2"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide2"
+        >
+          <mat-icon>{{ hide2 ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint
+          *ngIf="
+            regForm.controls.password2.value !== '' && passwordsMatch() === true
+          "
+        >
+          Your passwords
+          <strong>match</strong>
+        </mat-hint>
+        <mat-hint
+          *ngIf="
+            regForm.controls.password2.value !== '' &&
+            passwordsMatch() === false
+          "
+          class="text-danger"
+        >
+          Your passwords
+          <strong>don't match</strong>
+        </mat-hint>
+        <mat-error
+          *ngIf="
+            regForm.controls.password2.hasError('required') ||
+            regForm.controls.password2.pristine
+          "
+        >
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br /><br />
+      <button
+        class="margin-top w-100"
+        mat-raised-button
+        color="accent"
+        type="submit"
+        [disabled]="regForm.invalid || passwordsMatch() === false"
+      >
+        <span><i class="fa-solid fa-user-shield"></i></span> Sign up
+      </button>
+      <br /><br />
+      <a type="button" routerLink="/auth"
+        ><p class="small">or <strong>Login here</strong></p></a
+      >
+    </form>
+  </div>
+  <div class="col-md-4"></div>
+</div>

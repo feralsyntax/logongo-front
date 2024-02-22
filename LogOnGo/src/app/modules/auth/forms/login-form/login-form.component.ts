@@ -13,7 +13,7 @@ import { MyErrorStateMatcher } from '../../services/matcher/matcher.service';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
-  company: string = 'Pebo Kenya Ltd'
+  company: string = 'LogOnGo'
   authenticated: boolean = false;
   matcher = new MyErrorStateMatcher();
   private unsubscribe$ = new Subject<void>();

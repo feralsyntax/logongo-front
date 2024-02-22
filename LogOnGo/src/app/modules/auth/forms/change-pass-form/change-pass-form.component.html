@@ -31,7 +31,8 @@
           <input matInput placeholder="Enter new password confirmation..." name="password2" ngModel #password2="ngModel" type="password" required (mousedown)="onKey($event)" (keydown)="onKey($event)" (keyup)="onKey($event)" (keypress)="onKey($event)" (mousemove)="onKey($event)" (mouseleave)="onKey($event)">
           <h6 id="pass2" class="hide">{{values}}</h6>
           <mat-icon matSuffix>security</mat-icon>
-          <mat-hint><span class="alert alert-danger rounded" *ngIf="noMatch">Your passwords <strong>don't match</strong> </span> <span *ngIf="!noMatch" class="alert alert-info rounded"> Passwords <strong>match &nbsp;<i class="fa-solid fa-thumbs-up"></i></strong> </span></mat-hint>
+          <mat-hint *ngIf="noMatch" class="text-danger">Your passwords <strong>don't match</strong></mat-hint>
+          <mat-hint *ngIf="values && !noMatch">Your passwords <strong>match &nbsp;<i class="fa-solid fa-thumbs-up"></i></strong></mat-hint>
           <mat-error *ngIf="password2.hasError('required') || password2.pristine">
             Password confirmation is <strong>required</strong>
           </mat-error>

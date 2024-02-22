@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './components/login/login.component';
-import { AppModule } from 'src/app/app.module';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -19,7 +18,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ResetConfirmedComponent } from './components/reset-confirmed/reset-confirmed.component';
 import { MatButtonModule } from '@angular/material/button';
-import { NavbarComponent } from '../navigation/navbar/navbar.component';
 import { NavigationModule } from '../navigation/navigation.module';
 import { ErrorsModule } from '../errors/errors.module';
 
@@ -40,6 +38,7 @@ import { ErrorsModule } from '../errors/errors.module';
     CommonModule,
     AuthRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,

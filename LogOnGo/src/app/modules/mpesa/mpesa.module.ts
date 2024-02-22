@@ -5,7 +5,6 @@ import { MpesaRoutingModule } from './mpesa-routing.module';
 import { AddMpesaLogpageComponent } from './components/add-mpesa-logpage/add-mpesa-logpage.component';
 import { EmailMpesaComponent } from './components/email-mpesa/email-mpesa.component';
 import { MpesaDetailsComponent } from './components/mpesa-details/mpesa-details.component';
-import { SearchComponent } from './components/search/search.component';
 import { FuelMpesaLogsComponent } from './components/fuel-mpesa-logs/fuel-mpesa-logs.component';
 import { NoMpesaComponent } from './components/no-mpesa/no-mpesa.component';
 import { MpesaInstructionsComponent } from './components/mpesa-instructions/mpesa-instructions.component';
@@ -32,7 +31,6 @@ import { CustomFilterPipe } from './pipes/filter/custom-filter.pipe';
     AddMpesaLogpageComponent,
     EmailMpesaComponent,
     MpesaDetailsComponent,
-    SearchComponent,
     FuelMpesaLogsComponent,
     NoMpesaComponent,
     MpesaInstructionsComponent,
