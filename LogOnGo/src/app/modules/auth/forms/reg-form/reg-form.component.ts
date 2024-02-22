@@ -1,66 +1,66 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import * as Notiflix from 'notiflix';
-import { first, Subject, takeUntil } from 'rxjs';
-import { User } from 'src/app/classes/user/user';
+import { first } from 'rxjs';
 import { AuthService } from '../../services/auth/auth.service';
 import { MyErrorStateMatcher } from '../../services/matcher/matcher.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reg-form',
   templateUrl: './reg-form.component.html',
-  styleUrls: ['./reg-form.component.css']
+  styleUrls: ['./reg-form.component.css'],
 })
-export class RegFormComponent implements OnInit {
-  company: string = 'Pebo Kenya Ltd'
+export class RegFormComponent {
+  company: string = 'LogOnGo';
   formValid: boolean = false;
   hide = true;
-  noMatch: boolean;
-  matched: boolean;
-  values = '';
-  value = '';
-  noPass2: boolean;
+  hide2 = true;
   matcher = new MyErrorStateMatcher();
-  private unsubscribe$ = new Subject<void>();
-  emailExample = 'your_name@provider.com';
+  emailExample = 'user@provider.com';
 
-  constructor(
-    private router:Router,
-    private authService:AuthService,
-    ) { }
+  constructor(private router: Router, private authService: AuthService) {}
 
-  ngOnInit(): void {
-    this.confirmPass();
+  regForm = new FormGroup({
+    username: new FormControl(
+      '',
+      Validators.compose([Validators.required, Validators.minLength(4)])
+    ),
+    first_name: new FormControl(
+      '',
+      Validators.compose([Validators.required, Validators.minLength(3)])
+    ),
+    last_name: new FormControl(
+      '',
+      Validators.compose([Validators.required, Validators.minLength(3)])
+    ),
+    email: new FormControl(
+      '',
+      Validators.compose([Validators.email, Validators.required])
+    ),
+    petrol_station: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    password2: new FormControl('', Validators.required),
+  });
+
+  passwordsMatch(): boolean {
+    return (
+      this.regForm.controls.password.value ===
+      this.regForm.controls.password2.value
+    );
   }
 
-  isValid(event: boolean): void {
-    console.log(event);
-  }
-  onKeyOne(event: any){
-    this.value = event.target.value; 
-  }
-  onKey(event: any){
-    this.values = event.target.value; 
-  }
-  confirmPass(){
-    let pass1 = document.getElementById("pass1").textContent;  
-    var pass2 = document.getElementById("pass2").textContent;  
-    if (pass1 == pass2) {
-      this.noMatch = false;
-    } else if (pass1 != pass2){
-      this.noMatch = true;
-    } 
-  }
-  signUp(userData: User): void {
+  signUp(): void {
     Notiflix.Loading.hourglass('Processing, please wait...');
-    this.authService.register(userData).pipe(first()).subscribe({
-      next: (res) => {
-        Notiflix.Notify.success('Registration successful!');
-        this.router.navigate(['/auth']);
-        Notiflix.Loading.remove();
-      }
-    });  
+    this.authService
+      .register(this.regForm.value)
+      .pipe(first())
+      .subscribe({
+        next: (res) => {
+          Notiflix.Notify.success('Registration successful!');
+          this.router.navigate(['/auth']);
+          Notiflix.Loading.remove();
+        },
+      });
   }
-
-  
 }

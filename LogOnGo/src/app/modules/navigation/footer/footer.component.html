@@ -2,7 +2,7 @@
     <div class="container-fluid footer-content footer">
         <div class="row">
             <div class="col-md-4 center">
-                <p>2022 <i class="fa-solid fa-copyright"></i> PeboKenyaLtd<i class="fa-solid fa-trademark"></i></p>
+                <p><i class="fa-solid fa-copyright"></i> {{year}}  LogOnGo</p>
             </div>
             <div class="col-md-4 center" *ngIf="authenticated">
                 <a routerLink="/user/{{currentUser.username}}/contact/admin"><p><i class="fa-solid fa-message"></i> Management</p></a>

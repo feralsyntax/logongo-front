@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AuthInterceptor } from './helpers/auth/auth.interceptor';
-import * as Notiflix from 'notiflix';
 import { RouterModule } from '@angular/router';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 

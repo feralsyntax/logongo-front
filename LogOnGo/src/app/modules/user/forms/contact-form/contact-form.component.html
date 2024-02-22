@@ -1,54 +1,87 @@
+<form #contactForm="ngForm" (ngSubmit)="contactAdmin(contactForm.value)">
+  <div class="form-group hide">
+    <input
+      type="text"
+      class=""
+      name="name"
+      ngModel
+      [(ngModel)]="currentUser.username"
+    />
+    <input type="email" name="email" ngModel [(ngModel)]="currentUser.email" />
+    <input type="text" name="date" ngModel [(ngModel)]="today" />
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <mat-form-field
+          appearance="fill"
+          class="padding-2 full-width"
+          style="margin-top: 5%"
+        >
+          <mat-label>Subject</mat-label>
+          <input
+            matInput
+            placeholder="Email subject"
+            name="subject"
+            ngModel
+            #subject="ngModel"
+            type="text"
+            required
+            minlength="6"
+            maxlength="100"
+          />
+          <mat-icon matSuffix>mail</mat-icon>
+          <mat-hint>e.g: Inquiry</mat-hint>
+          <mat-error *ngIf="subject.hasError('required') || subject.pristine">
+            Subject is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="subject.hasError('minlength')">
+            Subject should be <strong>at least 6 characters</strong>
+          </mat-error>
+          <mat-error *ngIf="subject.hasError('maxlength')">
+            Subject should <strong>not exceed 100 characters</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+  </div>
+  <br />
+  <mat-form-field appearance="fill" class="padding-2 full-width">
+    <mat-label>Message</mat-label>
+    <textarea
+      placeholder="Type your message here..."
+      matInput
+      name="message"
+      ngModel
+      #message="ngModel"
+      minlength="16"
+      maxlength="5000"
+      required
+    ></textarea>
+    <mat-icon matSuffix>mail</mat-icon>
+    <mat-error *ngIf="message.hasError('required') || message.pristine">
+      Message is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="message.hasError('minlength')">
+      Message should be <strong>at least 16 characters</strong>
+    </mat-error>
+    <mat-error *ngIf="message.hasError('maxlength')">
+      Message should <strong>not exceed 5000 characters</strong>
+    </mat-error>
+  </mat-form-field>
 
-
-<form #contactForm="ngForm"  (ngSubmit)="contactAdmin(contactForm.value)">
-    <div class="form-group hide">
-        <input type="text" class="" name="name" ngModel [(ngModel)]="currentUser.username">
-        <input type="email" name="email" ngModel [(ngModel)]="currentUser.email">
-        <input type="text" name="date" ngModel [(ngModel)]="today">
-    </div>
-    <div class="form-group">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <mat-form-field appearance="fill" class="padding-2 full-width" style="margin-top:5%;">
-                    <mat-label>Subject</mat-label>
-                    <input matInput placeholder="Email subject" name="subject" ngModel #subject="ngModel" type="text" required minlength="6" maxlength="100">
-                    <mat-icon matSuffix>mail</mat-icon>
-                    <mat-hint>e.g: Inquiry</mat-hint>
-                    <mat-error *ngIf="subject.hasError('required') || subject.pristine">
-                      Subject is <strong>required</strong>
-                    </mat-error>
-                    <mat-error *ngIf="subject.hasError('minlength')">
-                      Subject should be <strong>at least 6 characters</strong> 
-                    </mat-error>
-                    <mat-error *ngIf="subject.hasError('maxlength')">
-                      Subject should <strong>not exceed 100 characters</strong> 
-                    </mat-error>
-                  </mat-form-field> 
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-    <br>
-      <mat-form-field appearance="fill" class="padding-2 full-width">
-        <mat-label>Message</mat-label>
-        <textarea placeholder="Type your message here..." matInput name="message" ngModel #message="ngModel" minlength="16" maxlength="5000" required></textarea>
-        <mat-icon matSuffix>mail</mat-icon>
-        <mat-error *ngIf="message.hasError('required') || message.pristine">
-          Message is <strong>required</strong>
-        </mat-error>
-        <mat-error *ngIf="message.hasError('minlength')">
-          Message should be <strong>at least 16 characters</strong> 
-        </mat-error>
-        <mat-error *ngIf="message.hasError('maxlength')">
-          Message should <strong>not exceed 5000 characters</strong> 
-        </mat-error>
-      </mat-form-field> 
-      
-            
-    <br><br>
-    <div class="form-group text-center">
-        <button type="submit" class="w-75" color="accent" mat-raised-button [disabled]="contactForm.invalid"><i class="fa-solid fa-paper-plane"></i> Send</button>
-    </div>
-    
-            </form>
+  <br /><br />
+  <div class="form-group text-center">
+    <button
+      type="submit"
+      class="w-75"
+      color="accent"
+      mat-raised-button
+      [disabled]="contactForm.invalid"
+    >
+      <i class="fa-solid fa-paper-plane"></i> Send
+    </button>
+  </div>
+</form>

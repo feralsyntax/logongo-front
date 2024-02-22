@@ -9,6 +9,7 @@ import { AuthService } from '../../auth/services/auth/auth.service';
 export class FooterComponent implements OnInit {
   currentUser: any;
   authenticated: boolean = false;
+  year = new Date().getFullYear();
 
   constructor(
     private auth:AuthService
