@@ -18,6 +18,7 @@ export class LoginFormComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   private unsubscribe$ = new Subject<void>();
   err: any;
+  emailExample = 'your_name@provider.com';
 
   constructor(
     private authService:AuthService,
