@@ -28,7 +28,7 @@
                             <mat-label>Your email</mat-label>
                             <input matInput placeholder="Your email" name="email" #email="ngModel" ngModel type="email" [(ngModel)]="currentUser.email" [errorStateMatcher]="matcher" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
                             <mat-icon matSuffix>email</mat-icon>
-                            <mat-hint>e.g username@provider.com</mat-hint>
+                            <mat-hint>e.g {{emailExample}}</mat-hint>
                             <mat-error *ngIf="email.hasError('pattern')">
                               Please enter a <strong>valid email address</strong> 
                             </mat-error>

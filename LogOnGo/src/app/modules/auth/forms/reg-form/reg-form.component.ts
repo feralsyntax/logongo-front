@@ -22,7 +22,8 @@ export class RegFormComponent implements OnInit {
   noPass2: boolean;
   matcher = new MyErrorStateMatcher();
   private unsubscribe$ = new Subject<void>();
-  
+  emailExample = 'your_name@provider.com';
+
   constructor(
     private router:Router,
     private authService:AuthService,

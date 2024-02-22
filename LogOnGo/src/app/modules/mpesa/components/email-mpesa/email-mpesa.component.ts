@@ -17,7 +17,8 @@ export class EmailMpesaComponent implements OnInit {
   mpesa_cumulative: any;
   mpesaDetails: any;
   currentUser = this.authService.currentUserValue;
-
+  emailExample = 'your_name@provider.com';
+  
   constructor(
     private mpesa:MpesaService,
     private route:ActivatedRoute,
